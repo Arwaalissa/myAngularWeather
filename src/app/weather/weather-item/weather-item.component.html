@@ -5,12 +5,11 @@
         <img [src]="weather.image" alt="Weather Icon">
       </div>
       <mat-card-title>{{weather.name}}, {{weather.country}}</mat-card-title>
-      <mat-card-subtitle>{{weather.temprature }} F</mat-card-subtitle>
+      <mat-card-subtitle>{{ weather.temperature | number: '1.0-0'}} ℉</mat-card-subtitle>
     </mat-card-header>
-    <agm-map [latitude]="weather.lat" [longitude]="weather.lng">
-<agm-marker [latitude]="weather.lat" [longitude]="weather.lng"></agm-marker>
-
-    </agm-map>
+   <agm-map [latitude]="weather.lat" [longitude]="weather.lon">
+        <agm-marker [latitude]="weather.lat" [longitude]="weather.lon"></agm-marker>
+      </agm-map>
 
     <mat-card-content class="description">
       <h3 class="subheading-2">
